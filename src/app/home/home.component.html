@@ -1,0 +1,60 @@
+<div class="cloth">
+  <div>
+    <h1 class="font-semibold text-4xl">Order in 1 minute</h1>
+    <p>Pay with Cash,Visa or Paypal</p>
+    <button
+      routerLink="/products"
+      type="button"
+      class="button1 text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+    >
+      Order
+    </button>
+  </div>
+  <img
+    class="img1"
+    src="../../assets/images/Best-Cooling-Clothes-on-Amazon-of-2023-tout-02cbad36896540c4b949106f0f6ba43b.jpg"
+    alt="clothes"
+  />
+</div>
+<h2 class="numbItems font-semibold text-xl">
+  {{ productNumber }} items only for you
+</h2>
+<div class="prodc">
+  <div *ngFor="let item of productList">
+    <app-product-card [productItem]="item"></app-product-card>
+  </div>
+</div>
+<button
+  routerLink="/products"
+  type="button"
+  class="seemore text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+>
+  See more
+</button>
+
+<div class="aboutus">
+  <img
+    class="img2"
+    src="../../assets/images/360_F_210852662_KWN4O1tjxIQt8axc2r82afdSwRSLVy7g.jpg"
+    alt="cloth"
+  />
+  <div>
+    <h2 class="about font-semibold text-4xl">About us</h2>
+    <h3 class="prol text-xl">
+      Welcome to Style Lab, where fashion meets innovation, and individuality is
+      celebrated. In a world brimming with trends, we are the canvas where your
+      unique style takes center stage. Style Lab isn’t just a clothing site;
+      it’s a sanctuary for those who see fashion as more than just garments.
+      It’s a playground for the avant-garde, the trendsetters, and the
+      boundary-pushers. Here, every fabric tells a story, every stitch speaks of
+      craftsmanship, and every design embodies a statement. Our collection isn’t
+      just about attire; it’s an exploration of self-expression. From timeless
+      classics to cutting-edge couture, each piece is handpicked to ignite your
+      imagination and embolden your style journey. Join us as we redefine
+      fashion. Unleash your creativity, express your authenticity, and step into
+      a realm where style knows no limits. Welcome to Style Lab—a space where
+      fashion isn’t just worn; it’s created. Dare to be different. Explore.
+      Innovate. And let your style speak volumes.
+    </h3>
+  </div>
+</div>

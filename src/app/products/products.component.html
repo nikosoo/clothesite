@@ -1,0 +1,123 @@
+<mat-sidenav-container class="sidenav-container">
+  <!-- Sidenav -->
+  <mat-sidenav #sidenav class="sidenav">
+    <mat-nav-list>
+      <a mat-list-item routerLink="/products">Men</a>
+      <a mat-list-item routerLink="/products1">Women</a>
+      <!-- Add more menu items as needed -->
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <!-- Main content -->
+  <mat-sidenav-content>
+    <!-- Toolbar -->
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="sidenav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <span>Menu</span>
+    </mat-toolbar>
+
+    <!-- Your page content -->
+    <div class="main-content">
+      <!-- Your content here -->
+      <div class="matlist">
+        <mat-chip-listbox>
+          <mat-chip-option (click)="onAll()">All</mat-chip-option>
+          <mat-chip-option (click)="onClick(1)">T-shirt</mat-chip-option>
+          <mat-chip-option (click)="onClick(2)">Shirt</mat-chip-option>
+          <mat-chip-option (click)="onClick(3)">Shoes</mat-chip-option>
+          <mat-chip-option (click)="onClick(4)">Cargo</mat-chip-option>
+        </mat-chip-listbox>
+      </div>
+
+      <div class="prodList prod2" *ngIf="displayedProduct.length > 0">
+        <div *ngFor="let product of displayedProduct">
+          <div
+            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <a href="#">
+              <img
+                class="img2 p-8 rounded-t-lg"
+                src="{{ product.imageUrl }}"
+                alt="product image"
+              />
+            </a>
+            <div class="px-5 pb-5">
+              <a href="#">
+                <h5
+                  class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                >
+                  {{ product.name }}
+                </h5>
+              </a>
+              <div class="flex items-center mt-2.5 mb-5">
+                <p class="font-semibold">Rating</p>
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
+                  >{{ product.rating }}</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-3xl font-bold text-gray-900 dark:text-white"
+                  >{{ product.price | currency }}</span
+                >
+                <button
+                  type="button"
+                  class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
+                  Order
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div *ngIf="displayedProduct.length === 0" class="prodList">
+        <div *ngFor="let items1 of productList1">
+          <div
+            class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+          >
+            <a href="#">
+              <img
+                class="img2 p-8 rounded-t-lg"
+                src="{{ items1.imageUrl }}"
+                alt="product image"
+              />
+            </a>
+            <div class="px-5 pb-5">
+              <a href="#">
+                <h5
+                  class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+                >
+                  {{ items1.name }}
+                </h5>
+              </a>
+              <div class="flex items-center mt-2.5 mb-5">
+                <p class="font-semibold">Rating</p>
+                <span
+                  class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
+                  >{{ items1.rating }}</span
+                >
+              </div>
+              <div class="flex items-center justify-between">
+                <span
+                  class="text-3xl font-bold text-gray-900 dark:text-white"
+                  >{{ items1.price | currency }}</span
+                >
+                <button
+                  type="button"
+                  class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+                >
+                  Order
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
