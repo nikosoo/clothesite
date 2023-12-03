@@ -43,7 +43,7 @@ p {
 .about {
   font-family: "Playpen Sans", cursive;
 }
-.aboutus {
+.about-us {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -59,7 +59,7 @@ p {
   width: 500px;
 }
 
-.seemore {
+.see-more {
   margin-top: 30px;
   margin-left: 855px;
 }

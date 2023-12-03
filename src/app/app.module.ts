@@ -16,13 +16,29 @@ import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
-import { Products1Component } from './products/products1/products1.component';
+import { ProductsWomenComponent } from './products/products-women/products-women.component';
+import { ProductsMenComponent } from './products/products-men/products-men.component';
+import { CartComponent } from './cart/cart.component';
+import { ProductsViewComponent } from './products/products-view/products-view.component';
+import { ReactiveFormsModule } from '@angular/forms';
+
+import { MatDialogModule } from '@angular/material/dialog';
 
 const appRoutes: Routes = [
   { path: '', component: HomeComponent },
-  { path: 'products', component: ProductsComponent },
+  { path: 'cart', component: CartComponent },
+
+  {
+    path: 'products',
+    component: ProductsComponent,
+    children: [
+      { path: 'women', component: ProductsWomenComponent },
+      { path: 'men', component: ProductsMenComponent },
+    ],
+  },
+
   { path: 'contact', component: ContactComponent },
-  { path: 'products1', component: Products1Component },
+  { path: 'productsview', component: ProductsViewComponent },
 ];
 
 @NgModule({
@@ -34,7 +50,10 @@ const appRoutes: Routes = [
     ProductCardComponent,
     ProductsComponent,
     ContactComponent,
-    Products1Component,
+    ProductsWomenComponent,
+    ProductsMenComponent,
+    CartComponent,
+    ProductsViewComponent,
   ],
   imports: [
     BrowserModule,
@@ -45,6 +64,8 @@ const appRoutes: Routes = [
     MatToolbarModule,
     MatIconModule,
     MatListModule,
+    MatDialogModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [],

@@ -2,8 +2,8 @@
   <!-- Sidenav -->
   <mat-sidenav #sidenav class="sidenav">
     <mat-nav-list>
-      <a mat-list-item routerLink="/products">Men</a>
-      <a mat-list-item routerLink="/products1">Women</a>
+      <a mat-list-item [routerLink]="['/products', 'men']">Men</a>
+      <a mat-list-item [routerLink]="['/products', 'women']">Women</a>
       <!-- Add more menu items as needed -->
     </mat-nav-list>
   </mat-sidenav>
@@ -42,11 +42,15 @@
       </div>
 
       <div class="prodList prod2" *ngIf="displayedProduct.length > 0">
-        <div *ngFor="let product of displayedProduct">
+        <div
+          *ngFor="let product of displayedProduct; let i = index"
+          (click)="sendItem2(i)"
+          routerLink="/productsview"
+        >
           <div
             class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <a href="#">
+            <a>
               <img
                 class="img2 p-8 rounded-t-lg"
                 src="{{ product.imageUrl }}"
@@ -54,7 +58,7 @@
               />
             </a>
             <div class="px-5 pb-5">
-              <a href="#">
+              <a>
                 <h5
                   class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
                 >
@@ -74,6 +78,8 @@
                   >{{ product.price | currency }}</span
                 >
                 <button
+                  (click)="sendItem2(i)"
+                  routerLink="/productsview"
                   type="button"
                   class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
@@ -86,11 +92,15 @@
       </div>
 
       <div *ngIf="displayedProduct.length === 0" class="prodList">
-        <div *ngFor="let items1 of productList2">
+        <div
+          *ngFor="let items1 of productList2; let i = index"
+          (click)="sendItem2(i)"
+          routerLink="/productsview"
+        >
           <div
             class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
           >
-            <a href="#">
+            <a>
               <img
                 class="img2 p-8 rounded-t-lg"
                 src="{{ items1.imageUrl }}"
@@ -98,7 +108,7 @@
               />
             </a>
             <div class="px-5 pb-5">
-              <a href="#">
+              <a>
                 <h5
                   class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
                 >
@@ -118,6 +128,8 @@
                   >{{ items1.price | currency }}</span
                 >
                 <button
+                  (click)="sendItem2(i)"
+                  routerLink="/productsview"
                   type="button"
                   class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
                 >
@@ -128,6 +140,6 @@
           </div>
         </div>
       </div>
-    </div>
-  </mat-sidenav-content>
-</mat-sidenav-container>
+    </div></mat-sidenav-content
+  ></mat-sidenav-container
+>
