@@ -1,5 +1,5 @@
-<div class="cloth">
-  <div>
+<div class="cloth max-sm:flex-col-reverse">
+  <div class="">
     <h1 class="font-semibold text-4xl">Order in 1 minute</h1>
     <p>Pay with Cash,Visa or Paypal</p>
     <button
@@ -19,20 +19,23 @@
 <h2 class="numbItems font-semibold text-xl">
   {{ productNumber }} items only for you
 </h2>
-<div class="prodc">
-  <div *ngFor="let item of productList">
-    <app-product-card [productItem]="item"></app-product-card>
+<div>
+  <div class="prodc max-sm:flex-col">
+    <div *ngFor="let item of productList">
+      <app-product-card [productItem]="item"></app-product-card>
+    </div>
+  </div>
+  <div>
+    <button
+      [routerLink]="['/products', 'men']"
+      type="button"
+      class="see-more text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-auto max-sm:mx-0"
+    >
+      See more
+    </button>
   </div>
 </div>
-<button
-  [routerLink]="['/products', 'men']"
-  type="button"
-  class="see-more text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
->
-  See more
-</button>
-
-<div class="about-us">
+<div class="about-us max-sm:flex-col sm:flex-col md:flex-row">
   <img
     class="img2"
     src="../../assets/images/360_F_210852662_KWN4O1tjxIQt8axc2r82afdSwRSLVy7g.jpg"

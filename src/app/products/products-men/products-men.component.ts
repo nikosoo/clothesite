@@ -23,8 +23,6 @@ export class ProductsMenComponent {
   }
 
   onClick(productId: number) {
-    // Find the specific product based on the productName
-
     this.displayedProduct = this.productList1.filter(
       (product) => product.id === productId
     );
