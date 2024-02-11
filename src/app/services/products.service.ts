@@ -81,7 +81,7 @@ export class ProductsService {
       5,
       'Women shirt',
       30,
-      '../../assets/images/1690464245-best-white-shirts-women-reiss-64c26fdbe7df6.png',
+      '../../assets/images/S336LT_Talent_Slate_White_00_FS8E7hd.jpg',
       3.9
     ),
     new Product(

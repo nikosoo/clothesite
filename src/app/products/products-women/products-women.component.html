@@ -1,16 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
-  <!-- Sidenav -->
   <mat-sidenav #sidenav class="sidenav">
     <mat-nav-list>
       <a mat-list-item [routerLink]="['/products', 'men']">Men</a>
       <a mat-list-item [routerLink]="['/products', 'women']">Women</a>
-      <!-- Add more menu items as needed -->
     </mat-nav-list>
   </mat-sidenav>
 
-  <!-- Main content -->
   <mat-sidenav-content>
-    <!-- Toolbar -->
     <mat-toolbar color="accent">
       <button mat-icon-button (click)="sidenav.toggle()">
         <mat-icon>menu</mat-icon>
@@ -18,9 +14,7 @@
       <span>Menu</span>
     </mat-toolbar>
 
-    <!-- Your page content -->
-    <div class="main-content">
-      <!-- Your content here -->
+    <div class="main-content flex items-center justify-center mt-10 mb-10">
       <div class="matlist">
         <mat-chip-listbox>
           <mat-chip-option color="accent" (click)="onAll()"
@@ -40,68 +34,15 @@
           >
         </mat-chip-listbox>
       </div>
+    </div>
 
-      <div class="flex justify-center">
-        <div
-          class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3"
-          *ngIf="displayedProduct.length > 0"
-        >
-          <div
-            *ngFor="let product of displayedProduct; let i = index"
-            (click)="sendItem2(i)"
-            routerLink="/productsview"
-          >
-            <div
-              class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
-            >
-              <a>
-                <img
-                  class="img2 p-8 rounded-t-lg"
-                  src="{{ product.imageUrl }}"
-                  alt="product image"
-                />
-              </a>
-              <div class="px-5 pb-5">
-                <a>
-                  <h5
-                    class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
-                  >
-                    {{ product.name }}
-                  </h5>
-                </a>
-                <div class="flex items-center mt-2.5 mb-5">
-                  <p class="font-semibold">Rating</p>
-                  <span
-                    class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
-                    >{{ product.rating }}</span
-                  >
-                </div>
-                <div class="flex items-center justify-between">
-                  <span
-                    class="text-3xl font-bold text-gray-900 dark:text-white"
-                    >{{ product.price | currency }}</span
-                  >
-                  <button
-                    (click)="sendItem2(i)"
-                    routerLink="/productsview"
-                    type="button"
-                    class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
-                  >
-                    Order
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
+    <div class="flex justify-center">
       <div
-        *ngIf="displayedProduct.length === 0"
-        class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"
+        class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 ml-10"
+        *ngIf="displayedProduct.length > 0"
       >
         <div
-          *ngFor="let items1 of productList2; let i = index"
+          *ngFor="let product of displayedProduct; let i = index"
           (click)="sendItem2(i)"
           routerLink="/productsview"
         >
@@ -111,7 +52,7 @@
             <a>
               <img
                 class="img2 p-8 rounded-t-lg"
-                src="{{ items1.imageUrl }}"
+                src="{{ product.imageUrl }}"
                 alt="product image"
               />
             </a>
@@ -120,20 +61,20 @@
                 <h5
                   class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
                 >
-                  {{ items1.name }}
+                  {{ product.name }}
                 </h5>
               </a>
               <div class="flex items-center mt-2.5 mb-5">
                 <p class="font-semibold">Rating</p>
                 <span
                   class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
-                  >{{ items1.rating }}</span
+                  >{{ product.rating }}</span
                 >
               </div>
               <div class="flex items-center justify-between">
                 <span
                   class="text-3xl font-bold text-gray-900 dark:text-white"
-                  >{{ items1.price | currency }}</span
+                  >{{ product.price | currency }}</span
                 >
                 <button
                   (click)="sendItem2(i)"
@@ -148,6 +89,58 @@
           </div>
         </div>
       </div>
-    </div></mat-sidenav-content
-  ></mat-sidenav-container
+    </div>
+
+    <div
+      *ngIf="displayedProduct.length === 0"
+      class="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 ml-10"
+    >
+      <div
+        *ngFor="let items1 of productList2; let i = index"
+        (click)="sendItem2(i)"
+        routerLink="/productsview"
+      >
+        <div
+          class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700"
+        >
+          <a>
+            <img
+              class="img2 p-8 rounded-t-lg"
+              src="{{ items1.imageUrl }}"
+              alt="product image"
+            />
+          </a>
+          <div class="px-5 pb-5">
+            <a>
+              <h5
+                class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
+              >
+                {{ items1.name }}
+              </h5>
+            </a>
+            <div class="flex items-center mt-2.5 mb-5">
+              <p class="font-semibold">Rating</p>
+              <span
+                class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
+                >{{ items1.rating }}</span
+              >
+            </div>
+            <div class="flex items-center justify-between">
+              <span class="text-3xl font-bold text-gray-900 dark:text-white">{{
+                items1.price | currency
+              }}</span>
+              <button
+                (click)="sendItem2(i)"
+                routerLink="/productsview"
+                type="button"
+                class="text-gray-900 bg-gradient-to-r from-red-200 via-red-300 to-yellow-200 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-100 dark:focus:ring-red-400 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2"
+              >
+                Order
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </mat-sidenav-content></mat-sidenav-container
 >
