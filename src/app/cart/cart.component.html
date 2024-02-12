@@ -12,7 +12,7 @@
           <th scope="col" class="px-6 py-3 rounded-e-lg">Price</th>
         </tr>
       </thead>
-      <tbody *ngFor="let getItems of productGet; index as i">
+      <tbody *ngFor="let getItems of productGet.slice(1); index as i">
         <tr class="bg-white dark:bg-gray-800">
           <th
             scope="row"
@@ -22,8 +22,18 @@
           </th>
 
           <td class="px-6 py-4">{{ getItems.price }}</td>
+          <td class="px-6 py-4">
+            <button
+              (click)="deleteItem(getItems)"
+              type="button"
+              class="text-white bg-gradient-to-br from-red-500 to-red-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-full text-sm px-3 py-1.5 text-center ml-2"
+            >
+              X
+            </button>
+          </td>
         </tr>
       </tbody>
+
       <tfoot>
         <tr class="font-semibold text-gray-900 dark:text-white">
           <th scope="row" class="px-6 py-3 text-base">Total</th>
@@ -32,8 +42,12 @@
         </tr>
       </tfoot>
     </table>
-    <button (click)="orderButton()" *ngIf="productGet.length > 1">
-      <a class="place-order relative inline-block text-m group">
+    <button
+      class="mt-10 ml-10"
+      (click)="orderButton()"
+      *ngIf="productGet.length > 1"
+    >
+      <a class="relative inline-block text-m group">
         <span
           class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white"
         >

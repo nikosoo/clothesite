@@ -23,6 +23,7 @@ export class CartComponent implements OnInit {
       console.log('Received product:', product);
       this.productGet = product;
     });
+    console.log(this.productGet);
   }
 
   getTotalPrice(): number {
@@ -38,5 +39,12 @@ export class CartComponent implements OnInit {
   orderButton() {
     alert('Your order has been placed');
     location.reload();
+  }
+
+  deleteItem(item: Product): void {
+    const index = this.productGet.indexOf(item);
+    if (index !== -1) {
+      this.productGet.splice(index, 1);
+    }
   }
 }

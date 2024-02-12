@@ -2,6 +2,7 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { Product } from 'src/app/services/product';
 import { ProductShowService } from 'src/app/services/productShow.service';
 import { ProductViewService } from 'src/app/services/productView.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-products-view',
@@ -13,7 +14,8 @@ export class ProductsViewComponent implements OnInit {
 
   constructor(
     private msg1: ProductViewService,
-    private sendItem: ProductShowService
+    private sendItem: ProductShowService,
+    private router: Router
   ) {}
   ngOnInit(): void {
     this.msg1.getMsg().subscribe((product: any) => {
@@ -23,5 +25,6 @@ export class ProductsViewComponent implements OnInit {
 
   orderItem() {
     this.sendItem.sendMsg(this.productView1);
+    this.router.navigate(['/cart']);
   }
 }
