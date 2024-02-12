@@ -7,50 +7,56 @@ export class ProductsService {
   products: Product[] = [
     new Product(
       1,
-      'T-shirt',
+      'Men T-shirt',
       20,
       '../../assets/images/mavro-tshirt-monoxromo-800x1200h.jpg',
       3.2
     ),
     new Product(
       2,
-      'Shirt',
+      'Men Shirt',
       40,
       '../../assets/images/YS07-BLACK-1-min.jpg',
       4.1
     ),
     new Product(
       3,
-      'Shoes',
+      'Men Shoes',
       120,
       '../../assets/images/nike-air-max-95.jpg',
       4.8
     ),
-    new Product(4, 'Cargo', 50, '../../assets/images/ARG03106-Edit.jpg', 4.1),
+    new Product(
+      4,
+      'Men Cargo',
+      50,
+      '../../assets/images/ARG03106-Edit.jpg',
+      4.1
+    ),
     new Product(
       1,
-      'T-Shirt',
+      'Men T-Shirt',
       40,
       '../../assets/images/h-embroidered-t-shirt--072025HA01-worn-1-0-0-1000-1000_g.webp',
       4.1
     ),
     new Product(
       2,
-      'Shirt',
+      'Men Shirt',
       40,
       '../../assets/images/ClassicShirt_FrenchBlue1.webp',
       4.1
     ),
     new Product(
       3,
-      'Shoes',
+      'Men Shoes',
       40,
       '../../assets/images/a25a1901-a687-4dd3-94f7-472e7af433aa.webp',
       4.1
     ),
     new Product(
       4,
-      'Cargo',
+      'Men Cargo',
       40,
       '../../assets/images/ab-tactical-baggy-cargo-pant-tan-front-10003249.webp',
       4.1
