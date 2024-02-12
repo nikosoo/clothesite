@@ -27,13 +27,15 @@
       </div>
     </div>
     <div>
-      <button
-        [routerLink]="['/products', 'men']"
-        type="button"
-        class="see-more text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center me-2 mb-2 mx-auto max-sm:mx-0"
-      >
-        See more
-      </button>
+      <div class="flex justify-center items-center mt-10">
+        <button
+          [routerLink]="['/products', 'men']"
+          type="button"
+          class="text-white bg-gradient-to-br from-purple-600 to-blue-500 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800 font-medium rounded-lg text-sm px-5 py-2.5 text-center"
+        >
+          See more
+        </button>
+      </div>
     </div>
   </div>
   <div class="about-us max-sm:flex-col sm:flex-col md:flex-row">
