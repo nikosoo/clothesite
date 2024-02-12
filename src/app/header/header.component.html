@@ -1,6 +1,4 @@
-<nav
-  class="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600"
->
+<nav class="bg-white fixed w-full z-20 top-0 start-0 border-b border-gray-200">
   <div
     class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-2 max-sm:flex-col sm:flex-col md:flex-col lg:flex-row"
   >
@@ -10,8 +8,7 @@
         class="h-8"
         alt="clothing Logo"
       />
-      <span
-        class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+      <span class="self-center text-2xl font-semibold whitespace-nowrap"
         >Style Lab</span
       >
     </a>
@@ -20,13 +17,13 @@
       id="navbar-cta"
     >
       <ul
-        class="flex flex-row font-medium p-0 md:p-0 mt-0 border border-gray-100 rounded-lg bg-gray-50 md:space-x-2 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700 max-sm:flex-row"
+        class="flex flex-row font-medium p-0 md:p-0 mt-0 border border-gray-100 rounded-lg bg-gray-50 md:space-x-2 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white md:border-gray-700 max-sm:flex-row"
       >
         <!-- Your navigation links here -->
         <li class="relative group">
           <a
             routerLink="/"
-            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
             aria-current="page"
             >Home</a
           >
@@ -35,16 +32,15 @@
           <a
             [routerLink]="['/products', 'men']"
             href="#"
-            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
+            >Products</a
           >
-            Products
-          </a>
         </li>
         <li class="relative group">
           <a
             routerLink="/cart"
             href="#"
-            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
             >Cart</a
           >
         </li>
@@ -52,7 +48,7 @@
           <a
             routerLink="contact"
             href="#"
-            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700"
+            class="block py-0.5 px-1 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700"
             >Contact</a
           >
         </li>

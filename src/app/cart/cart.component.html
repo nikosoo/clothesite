@@ -1,32 +1,26 @@
 <div>
   <div class="table1 relative overflow-x-auto">
-    <table
-      class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400"
-    >
-      <thead
-        class="text-xs text-gray-700 uppercase bg-gray-100 dark:bg-gray-700 dark:text-gray-400"
-      >
+    <table class="w-full text-sm text-left rtl:text-right text-gray-500">
+      <thead class="text-xs text-gray-700 uppercase bg-gray-100">
         <tr>
           <th scope="col" class="px-9 py-3 rounded-s-lg">Product name</th>
-
           <th scope="col" class="px-6 py-3 rounded-e-lg">Price</th>
         </tr>
       </thead>
       <tbody *ngFor="let getItems of productGet.slice(1); index as i">
-        <tr class="bg-white dark:bg-gray-800">
+        <tr class="bg-white">
           <th
             scope="row"
-            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white"
+            class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap"
           >
             {{ getItems.name }}
           </th>
-
           <td class="px-6 py-4">{{ getItems.price }}</td>
           <td class="px-6 py-4">
             <button
               (click)="deleteItem(getItems)"
               type="button"
-              class="text-white bg-gradient-to-br from-red-500 to-red-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium rounded-full text-sm px-3 py-1.5 text-center ml-2"
+              class="text-white bg-gradient-to-br from-red-500 to-red-600 hover:bg-gradient-to-bl focus:ring-4 focus:outline-none focus:ring-red-300 font-medium rounded-full text-sm px-3 py-1.5 text-center ml-2"
             >
               X
             </button>
@@ -35,18 +29,13 @@
       </tbody>
 
       <tfoot>
-        <tr class="font-semibold text-gray-900 dark:text-white">
+        <tr class="font-semibold text-gray-900">
           <th scope="row" class="px-6 py-3 text-base">Total</th>
-
           <td class="px-6 py-3">{{ getTotalPrice() }}</td>
         </tr>
       </tfoot>
     </table>
-    <button
-      class="mt-10 ml-10"
-      (click)="orderButton()"
-      *ngIf="productGet.length > 1"
-    >
+    <button class="mt-10 ml-10" (click)="orderButton()">
       <a class="relative inline-block text-m group">
         <span
           class="relative z-10 block px-5 py-3 overflow-hidden font-medium leading-tight text-gray-800 transition-colors duration-300 ease-out border-2 border-gray-900 rounded-lg group-hover:text-white"
